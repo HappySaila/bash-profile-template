@@ -38,7 +38,7 @@ code() {
 curl-go-template-infrastructure() {
   post local /create ABC Value \"ABC\"
   }
-curl-go-template-infrastructure-grantwilson() {
+curl-go-template-infrastructure-cloudrun() {
   post cloudrun /create ABC Value \"ABC\"
   }
 curl-go-template-infrastructure-gae() {
