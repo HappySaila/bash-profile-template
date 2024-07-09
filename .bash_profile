@@ -39,7 +39,7 @@ curl-go-template-infrastructure() {
   post local /create ABC Value \"ABC\"
   }
 curl-go-template-infrastructure-grantwilson() {
-  post cloud /create ABC Value \"ABC\"
+  post cloudrun /create ABC Value \"ABC\"
   }
 curl-go-template-infrastructure-gae() {
   post gae /create ABC Value \"ABC\"
@@ -149,7 +149,7 @@ alias trash-empty="rm -rf $TRASH/* && echo 'emptied trash'"
 # UUUUU
 declare -A urls=(
   ["local"]="localhost:8080"
-  ["cloud"]="https://go-template-infrastructure-5rgisb4ctq-uc.a.run.app"
+  ["cloudrun"]="https://go-template-infrastructure-5rgisb4ctq-uc.a.run.app"
   ["gae"]="https://grant-wilson.uc.r.appspot.com"
   )
 # VVVVV
