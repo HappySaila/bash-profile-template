@@ -36,7 +36,7 @@ code() {
   fi
   }
 curl-go-template-infrastructure() {
-  post l /create ABC Value \"ABC\"
+  post local /create ABC Value \"ABC\"
   }
 curl-go-template-infrastructure-grantwilson() {
   post cloud /create ABC Value \"ABC\"
@@ -85,15 +85,17 @@ alias la="ls -la"
 post() {
   if [ "$#" -lt 4 ]; then
     echo "Usage: post [environment] [endpoint] [namespace] [variadic-json-body-key-value]"
-    echo "post l /create agd-internal A 10 B 20" | clip.exe
+    echo "post local /create agd-internal A 10 B 20" | clip.exe
     return 1
   fi
 
-  # Get URL  
-  url_base="${url_map[$1]}"
+  # Get URL
+  url_base="${urls[$1]}"
   if [ -z "$url_base" ]; then
-    url_base=$1
+    echo "Error: URL base not found for key '$1'."
+    return
   fi
+  echo $url_base
 
   # Extract other parameters
   endpoint="$2"
@@ -146,7 +148,7 @@ alias trash-create="mkdir -p $TRASH"
 alias trash-empty="rm -rf $TRASH/* && echo 'emptied trash'"
 # UUUUU
 declare -A urls=(
-  ["l"]="localhost:8080"
+  ["local"]="localhost:8080"
   ["cloud"]="https://go-template-infrastructure-5rgisb4ctq-uc.a.run.app"
   ["gae"]="https://grant-wilson.uc.r.appspot.com"
   )
