@@ -1,29 +1,5 @@
-
-# Auto pulls/pushes
-pull-bash-profile() {
-  cd-bash-profile
-  ga
-  gst
-  git pull
-  gsta
-  gs
-  }
-push-bash-profile() {
-  cd-bash-profile
-  git add .
-  git commit -m "bash profile"
-  git push
-  }
-  cd-sandbox
-  git add .
-  git commit -m "added sand"
-  git push
-  }
-# Directories
-export DirectoryBashProfile=$DirectoryRepos/bash-profile
-# Code
-alias code-bash-profile="cd-bash-profile && code ."
-# Clones
-alias clone-bash-profile-template="git clone https://github.com/HappySaila/bash-profile-template"
-# Redirect
+# clone-*, cd-*, code-* and export Directory* variables
 alias cd-bash-profile="cd $DirectoryBashProfile"
+alias clone-bash-profile-template="git clone https://github.com/HappySaila/bash-profile-template"
+alias code-bash-profile="cd-bash-profile && code ."
+export DirectoryBashProfile=$DirectoryRepos/bash-profile
